@@ -10,7 +10,7 @@
 	<meta property="og:description" content="Workload : Workload Project Management Admin  Bootstrap 5 Template">
 	<meta property="og:image" content="https:/workload.dexignlab.com/xhtml/social-image.png">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Workload Project Management</title>
 	<!-- FAVICONS ICON -->
@@ -24,7 +24,7 @@
 
 <!-- Style CSS -->
 <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-	
+
 </head>
 <body>
 
@@ -77,7 +77,7 @@
         <!--**********************************
             Nav header end
         ***********************************-->
-		
+
 		<!--**********************************
             Chat box start
         ***********************************-->
@@ -304,7 +304,7 @@
 								<div>
 									<h6 class="mb-1">Chat with Khelesh</h6>
 									<p class="mb-0 text-success">Online</p>
-								</div>							
+								</div>
 								<div class="dropdown">
 									<a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -579,7 +579,7 @@
 		<!--**********************************
             Chat box End
         ***********************************-->
-		
+
 		<!--**********************************
             Header start
         ***********************************-->
@@ -689,9 +689,9 @@
 								</svg>
 									<span class="badge light text-white bg-secondary rounded-circle">27</span>
                                 </a>
-							</li>	
-							
-							
+							</li>
+
+
 							<li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link " href="javascript:void(0);" data-bs-toggle="dropdown">
 									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -797,15 +797,15 @@
 							<i class="fas fa-home"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
-                       
+
 
                     </li>
 
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    <li><a class="sidebar-main-tittle " href="javascript:void()" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <span class="nav-text">Perusahaan</span>
-                    </a>
-                   
+                        <span class="nav-text">About Us</span>
+
 
                 </li>
 
@@ -813,19 +813,19 @@
                     <i class="fas fa-home"></i>
                     <span class="nav-text">Proyek</span>
                 </a>
-               
+
 
             </li>
 
-            
+
             <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
                 <i class="fas fa-home"></i>
                 <span class="nav-text">Pegawai</span>
             </a>
-           
+
 
         </li>
-					
+
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
 						<i class="fas fa-info-circle"></i>
 							<span class="nav-text">Apps</span>
@@ -958,7 +958,7 @@
 						<a href="javascript:void(0);" class="btn btn-primary btn-rounded">Learn more <i class="fas fa-caret-right"></i></a>
 					</div>
 				</div>
-				
+
 				<div class="copyright">
 					<p><strong>Workload Project Management</strong> © 2022 All Rights Reserved</p>
 					<p class="fs-12">Made with <span class="heart"></span> by DexignLab</p>
@@ -968,7 +968,7 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-		
+
 		<!--**********************************
             Content body start
         ***********************************-->
@@ -979,10 +979,10 @@
         <!--**********************************
             Content body end
         ***********************************-->
-		
 
 
-		
+
+
         <!--**********************************
             Footer start
         ***********************************-->
@@ -998,7 +998,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->

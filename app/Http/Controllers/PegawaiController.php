@@ -6,6 +6,7 @@ use App\Models\Pegawai;
 use App\Models\Perusahaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class PegawaiController extends Controller
 {
@@ -34,7 +35,7 @@ class PegawaiController extends Controller
             'password' => 'required|string|min:6',
             'jenis_kelamin' => 'required|in:L,P',
             'jabatan' => 'required|string|max:100',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048', // Validasi file gambar
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
             'id_perusahaan' => 'required|exists:perusahaans,id_perusahaan',
         ]);
 
@@ -70,7 +71,7 @@ class PegawaiController extends Controller
     // Mengupdate data pegawai
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validator = Validator::make( $request->all(), [
             'nama' => 'required|string|max:255',
             'nomor' => 'required|string|max:20',
             'email' => 'required|email|unique:pegawais,email,' . $id,
@@ -113,7 +114,7 @@ class PegawaiController extends Controller
     public function destroy($id)
     {
         $pegawai = Pegawai::findOrFail($id);
-        
+
         // Hapus foto jika ada
         if ($pegawai->foto && Storage::exists('public/' . $pegawai->foto)) {
             Storage::delete('public/' . $pegawai->foto);

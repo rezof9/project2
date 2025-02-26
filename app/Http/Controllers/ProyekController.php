@@ -14,7 +14,7 @@ class ProyekController extends Controller
     {
         // Ambil semua perusahaan untuk dropdown
         $perusahaans = Perusahaan::all();
-    
+
         // Menyaring proyek berdasarkan perusahaan jika ada parameter 'perusahaan_id'
         if ($request->has('perusahaan_id') && $request->perusahaan_id != 'all') {
             $proyeks = Proyek::with('task') // Eager load task
@@ -24,7 +24,7 @@ class ProyekController extends Controller
             $proyeks = Proyek::with('task') // Eager load task
                               ->get();
         }
-    
+
         // Proses menghitung task dan progress
         foreach ($proyeks as $proyek) {
             $tasks = $proyek->task; // Mendapatkan task terkait
@@ -34,7 +34,7 @@ class ProyekController extends Controller
                 'Revised' => 0,
                 'Completed' => 0,
             ];
-    
+
             if ($tasks) {
                 // Hitung jumlah task dengan status tertentu
                 foreach ($tasks as $task) {
@@ -49,19 +49,19 @@ class ProyekController extends Controller
                     }
                 }
             }
-    
+
             // Menambahkan ke proyek
             $proyek->status_count = $status_count;
-    
+
             // Hitung progress bar
             $total_tasks = array_sum($status_count); // Jumlah semua task
             $completed_tasks = $status_count['Completed'] + $status_count['Revised']; // Task yang selesai
             $proyek->progress = ($total_tasks > 0) ? ($completed_tasks / $total_tasks) * 100 : 0; // Progress bar
         }
-    
+
         return view('backend.proyek.index', compact('proyeks', 'perusahaans'));
     }
-    
+
 
     // Menampilkan form untuk menambah proyek
     public function create()

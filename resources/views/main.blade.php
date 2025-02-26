@@ -12,11 +12,11 @@
 	<meta name="format-detection" content="Mulyagiri">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
-	
+
 	<!-- PAGE TITLE HERE -->
 	<title>Mulyagiri</title>
 	<!-- FAVICONS ICON -->
-<link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/mulyagiri.png') }}">
+<link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logo/mulyagiri.png') }}">
 
 <!-- Nice Select CSS -->
 <link href="{{ asset('assets/css/nice-select.css') }}" rel="stylesheet">
@@ -28,7 +28,6 @@
 <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/css/nouislider.min.css') }}">
 
-	
 </head>
 <body>
 
@@ -46,9 +45,9 @@
         ***********************************-->
 		<div class="nav-header">
             <a href="index.html" class="brand-logo">
-				<img src="{{ asset('assets/images/mulyagiri.png') }}"  style="max-width: 80px;" />
+				<img src="{{ asset('assets/images/logo/mulyagiri.png') }}"  style="max-width: 80px;" />
 
-			
+
             </a>
             <div class="nav-control">
                 <div class="hamburger">
@@ -56,7 +55,7 @@
                 </div>
             </div>
         </div>
-    
+
 		<div class="chatbox">
 			<div class="chatbox-close"></div>
 			<div class="custom-tab-1">
@@ -280,7 +279,7 @@
 								<div>
 									<h6 class="mb-1">Chat with Khelesh</h6>
 									<p class="mb-0 text-success">Online</p>
-								</div>							
+								</div>
 								<div class="dropdown">
 									<a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg></a>
 									<ul class="dropdown-menu dropdown-menu-end">
@@ -552,20 +551,20 @@
 				</div>
 			</div>
 		</div>
-	
+
         <div class="header border-bottom">
             <div class="header-content">
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="dashboard_bar">
-                                Dashboard
+                                Perusahaan
                             </div>
                         </div>
                         <ul class="navbar-nav header-right">
 							<li class="nav-item d-flex align-items-center">
 								<div class="input-group search-area">
-									<input type="text" class="form-control" placeholder="Search here...">
+                                    <input type="text" id="searchInput" class="form-control" placeholder="Search here...">
 									<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
 								</div>
 							</li>
@@ -659,9 +658,9 @@
 								</svg>
 									<span class="badge light text-white bg-secondary rounded-circle">27</span>
                                 </a>
-							</li>	
-							
-							
+							</li>
+
+
 							<li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link " href="javascript:void(0);" data-bs-toggle="dropdown">
 									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -727,9 +726,9 @@
 							</li>
 							<li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                                    <img src="images/user.jpg" width="20" alt="">
+                                    <img src="{{ asset('assets/images/logo/mulyagiri.png') }}" width="20" alt="">
 									<div class="header-info ms-3">
-										<span class="fs-18 font-w500 mb-2">Franklin Jr.</span>
+										<span class="fs-18 font-w500 mb-2">PT.Mulyagiri</span>
 										<small class="fs-12 font-w400">demo@gmail.com</small>
 									</div>
                                 </a>
@@ -742,7 +741,7 @@
                                         <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         <span class="ms-2">Inbox </span>
                                     </a>
-                                    <a href="./login.html" class="dropdown-item ai-icon">
+                                    <a href="{{ route('login') }}" class="dropdown-item ai-icon">
                                         <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                         <span class="ms-2">Logout </span>
                                     </a>
@@ -767,24 +766,29 @@
 							<i class="fas fa-home"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
-                       
+
 
                     </li>
 
-                    <li><a href="{{ route('perusahaan.index') }}" class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    <li class="sidebar-list"><a href="{{ route('perusahaan.index') }}" class="has-arrow " href="javascript:void()" aria-expanded="true">
                         <i class="fas fa-table"></i>
-                        <span class="nav-text">Perusahaan</span>
+                        <span class="nav-text">Homes</span>
                     </a>
-                   
-
+                    <ul class="sidebar-submenu">
+                        <li><a href="{{ route('perusahaan.index') }}">Perusahaan</a></li>
+                        <li><a href="{{ route('about.index') }}">About Us</a></li>
+                        <li><a href="{{ route('services.index') }}">Our Servies</a></li>
+                        <li><a href="{{ route('products.index') }}">Product</a></li>
+                        <li><a href="{{ route('slider') }}">Slider</a></li>
+                    </ul>
                 </li>
 
-            
+
             <li><a href="{{ route('proyek.index') }}" class="has-arrow " href="javascript:void()" aria-expanded="false">
                 <i class="fas fa-chart-line"></i>
                 <span class="nav-text">Proyek</span>
             </a>
-           
+
 
         </li>
 
@@ -792,12 +796,12 @@
             <i class="fas fa-user-check"></i>
             <span class="nav-text">Pegawai</span>
         </a>
-       
+
 
     </li>
 
                 </ul>
-			
+
 				<div class="copyright">
 					<p><strong>Mulyagiri</strong> © 2025 All Rights Reserved</p>
 				</div>
@@ -806,21 +810,20 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-		
+
 		<!--**********************************
             Content body start
         ***********************************-->
         <div class="content-body">
-            <br>
-		@yield('section');
+		@yield('section')
         </div>
         <!--**********************************
             Content body end
         ***********************************-->
-		
 
 
-		
+
+
         <!--**********************************
             Footer start
         ***********************************-->
@@ -829,6 +832,7 @@
                 <p>Copyright © Designed & Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2022</p>
             </div>
         </div>
+
         <!--**********************************
             Footer end
         ***********************************-->
@@ -836,7 +840,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->
@@ -869,7 +873,7 @@
 <script src="{{ asset('assets/js/custom.min.js') }}"></script>
 <script src="{{ asset('assets/js/dlabnav-init.js') }}"></script>
 <script src="{{ asset('assets/js/demo.js') }}"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script src="{{ asset('assets/https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js') }}"></script>
 
 
 <script>
@@ -885,5 +889,11 @@
 
 
 
+<!-- CSS Select2 -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
+
+<!-- jQuery dan Select2 JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
 
 </body></html>

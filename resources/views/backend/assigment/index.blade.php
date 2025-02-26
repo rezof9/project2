@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('main')
 
-@section('content')
+@section('section')
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">

@@ -24,6 +24,7 @@
                                     <th><strong>Nama Perusahaan</strong></th>
                                     <th><strong>Logo</strong></th>
                                     <th><strong>URL</strong></th>
+                                    <th><strong>Jenis</strong></th>
                                     <th><strong>Status</strong></th>
                                     <th><strong>Aksi</strong></th>
                                 </tr>
@@ -32,8 +33,9 @@
                                 @foreach ($perusahaans as $perusahaan)
                                 <tr>
                                     <td>{{ $perusahaan->nama_perusahaan }}</td>
-                                    <td><img src="{{ asset('storage/' . $perusahaan->logo) }}" width="50" alt="Logo"></td>
+                                    <td><img src="{{ asset('storage/' . $perusahaan->logo) }}" width="100" alt="Logo"></td>
                                     <td><a href="{{ $perusahaan->url }}" target="_blank">{{ $perusahaan->url }}</a></td>
+                                    <td>{{ $perusahaan->jenis }}</td>
                                     <td>{{ $perusahaan->status }}</td>
                                     <td>
                                         <a href="{{ route('perusahaan.edit', $perusahaan->id_perusahaan) }}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>

@@ -25944,7 +25944,6 @@ table.dataTable.display tbody td {
   display: inline-block; }
 
 .intro {
-  border: 0.0625rem solid red;
   color: #1d1d1d; }
 
 #listResults .slider {
@@ -25956,6 +25955,18 @@ table.dataTable.display tbody td {
 
 #listResults input {
   width: 10%; }
+
+.section-bg {
+    background: url('{{ asset('assets/images/bg/bg1.jpg') }}') no-repeat left center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 
 #listResults label {
   border: none;

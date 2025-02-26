@@ -31,6 +31,29 @@
                             <label for="url" class="form-label">URL</label>
                             <input type="text" class="form-control" id="url" name="url" value="{{ $perusahaan->url }}" required>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="jenis" class="form-label">Jenis</label>
+                            <select class="form-select" id="jenis" name="jenis" required>
+                                <option value="Media Advertising">Media Advertising</option>
+                                <option value="Consultant">Consultant</option>
+                                <option value="Outsourcing">Outsourcing</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Construction">Construction</option>
+                                <option value="Event Organizer">Event Organizer</option>
+                                <option value="Health">Health</option>
+                                <option value="Education">Education</option>
+                                <option value="Energy">Energy</option>
+                                <option value="Social">Social</option>
+                                <option value="Art,Craft & Creative">Art, Craft & Creative</option>
+                                <option value="Farm">Farm</option>
+                                <option value="Software & Games">Software & Games</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Travel">Travel</option>
+                                <option value="Sport">Sport</option>
+                            </select>
+                        </div>
+
                         <div class="mb-3">
                             <label for="status" class="form-label">Status</label>
                             <select class="form-select" id="status" name="status" required>

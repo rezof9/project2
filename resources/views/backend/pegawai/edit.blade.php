@@ -34,10 +34,35 @@
                             <input type="email" class="form-control" name="email" id="email" value="{{ old('email', $pegawai->email) }}" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Kosongkan jika tidak ingin mengganti password">
+                        <div class="mb-3">
+                            <label class="text-label form-label" for="password">Password *</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" name="password" id="password" required>
+                                <span class="input-group-text show-pass" id="togglePassword" style="cursor: pointer;">
+                                    <i class="fa fa-eye-slash"></i>
+                                </span>
+                                <div class="invalid-feedback">Please Enter a password.</div>
+                            </div>
                         </div>
+
+                        <script>
+                        document.getElementById("togglePassword").addEventListener("click", function () {
+                            let passwordInput = document.getElementById("password");
+                            let icon = this.querySelector("i");
+
+                            if (passwordInput.type === "password") {
+                                passwordInput.type = "text";
+                                icon.classList.remove("fa-eye-slash");
+                                icon.classList.add("fa-eye");
+                            } else {
+                                passwordInput.type = "password";
+                                icon.classList.remove("fa-eye");
+                                icon.classList.add("fa-eye-slash");
+                            }
+                        });
+                        </script>
+
 
                         <div class="form-group">
                             <label for="jenis_kelamin">Jenis Kelamin</label>

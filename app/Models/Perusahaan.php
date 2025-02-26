@@ -26,6 +26,7 @@ class Perusahaan extends Model
         'nama_perusahaan',
         'logo',
         'url',
+        'jenis',
         'status',
     ];
 

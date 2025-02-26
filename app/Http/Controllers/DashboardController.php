@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Perusahaan;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,6 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('backend.dashboard');
+        $perusahaans = Perusahaan::all();
+        return view('backend.dashboard', compact('perusahaans'));
     }
 }

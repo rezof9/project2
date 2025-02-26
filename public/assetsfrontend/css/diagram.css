@@ -1,0 +1,119 @@
+/* Font Family */
+body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* General styling for section */
+  .tc-partners-style8 {
+    padding: 20px 0;
+ 
+  }
+  
+  .tc-partners-style8 .section-head h3 {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+  }
+  
+  .tc-partners-style8 .logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0; /* Menghilangkan gap antar elemen */
+  }
+  
+  .tc-partners-style8 .logo-card {
+    position: relative;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 15px 20px;
+    background-color: #fff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0; /* Hilangkan border radius */
+  }
+  
+  .tc-partners-style8 .logo-card:first-child {
+    border-top: none;
+    
+  }
+  
+  .tc-partners-style8 .logo-card:nth-child(3n+1) {
+  }
+  
+  .tc-partners-style8 .logo-card .num {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .tc-partners-style8 .logo-card .logo {
+width: 100px;    height: 100px;
+    margin-bottom: 10px;
+    object-fit: contain;
+
+}
+  
+  .tc-partners-style8 .logo-card .partner-name {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    color: #333;
+  }
+  
+  .tc-partners-style8 .logo-card .plus-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #666;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tc-partners-style8 .logo-card .plus-icon:hover {
+    background-color: #1b1b1b;
+    color: #fff;
+    transform: scale(1.1);
+    
+    font-weight: 800;
+  }
+  
+  /* Border Halus */
+  .tc-partners-style8 .logos {
+    border: 1px solid #eee; /* Warna border lebih terang */
+  }
+  
+  .tc-partners-style8 .logo-card {
+    border: 1px solid #eee; /* Warna border lebih terang */
+    border-left: none; /* Hilangkan garis ganda antar elemen */
+    border-top: none; /* Hilangkan garis ganda antar elemen */
+  }
+  
+  /* Responsif */
+  @media (max-width: 768px) {
+    .tc-partners-style8 .logos {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  
+    .tc-partners-style8 .logo-card {
+      padding: 10px 15px;
+    }
+  
+    .tc-partners-style8 .logo-card .partner-name {
+      font-size: 12px;
+    }
+  }
+  

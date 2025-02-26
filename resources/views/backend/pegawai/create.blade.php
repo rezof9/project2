@@ -52,16 +52,32 @@
                             <!-- Password -->
                             <div class="mb-3">
                                 <label class="text-label form-label" for="password">Password *</label>
-                                <div class="input-group transparent-append">
+                                <div class="input-group">
                                     <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                     <input type="password" class="form-control" name="password" id="password" required>
-                                    <span class="input-group-text show-pass">
+                                    <span class="input-group-text show-pass" id="togglePassword" style="cursor: pointer;">
                                         <i class="fa fa-eye-slash"></i>
-                                        <i class="fa fa-eye"></i>
                                     </span>
                                     <div class="invalid-feedback">Please Enter a password.</div>
                                 </div>
                             </div>
+
+                            <script>
+                            document.getElementById("togglePassword").addEventListener("click", function () {
+                                let passwordInput = document.getElementById("password");
+                                let icon = this.querySelector("i");
+
+                                if (passwordInput.type === "password") {
+                                    passwordInput.type = "text";
+                                    icon.classList.remove("fa-eye-slash");
+                                    icon.classList.add("fa-eye");
+                                } else {
+                                    passwordInput.type = "password";
+                                    icon.classList.remove("fa-eye");
+                                    icon.classList.add("fa-eye-slash");
+                                }
+                            });
+                            </script>
 
                             <!-- Jenis Kelamin -->
                             <div class="mb-3">
@@ -84,9 +100,39 @@
 
                             <!-- Foto -->
                             <div class="mb-3">
-                                <label class="text-label form-label" for="foto">Foto</label>
-                                <input type="file" class="form-control" name="foto" id="foto" accept="image/*">
+                                <label for="foto" class="form-label">Foto</label>
+                                <input type="file" class="form-control" id="foto" name="foto" onchange="previewFoto(event)">
                             </div>
+                    
+                                            @if(isset($pegawai->foto) && $pegawai->foto)
+                                                <div class="mb-3">
+                                                    <label class="form-label">Foto Saat Ini</label>
+                                                    <div>
+                                                        <img src="{{ asset('storage/' . $pegawai->foto) }}" alt="Foto" style="max-width: 150px;">
+                                                    </div>
+                                                </div>
+                                            @endif
+                    
+                                                                    <!-- Preview foto baru -->
+                                                                    <img id="fotoPreview" src="#" alt="Preview Foto"
+                                                                    style="max-width: 200px; display: none; border: 1px solid #ddd; padding: 5px; margin-top: 10px;">
+                                       
+                                                               <div class="invalid-feedback">Please upload a foto.</div>
+                                       
+                                                               <script>
+                                                                   function previewFoto(event) {
+                                                                       var reader = new FileReader();
+                                                                       reader.onload = function() {
+                                                                           var output = document.getElementById('fotoPreview');
+                                                                           output.src = reader.result;
+                                                                           output.style.display = "block";
+                                                                       }
+                                                                       reader.readAsDataURL(event.target.files[0]);
+                                                                   }
+                                                               </script>
+
+
+
 
                             <!-- Perusahaan -->
                             <div class="mb-3">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Perusahaan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PerusahaanController extends Controller
 {
@@ -19,24 +20,28 @@ class PerusahaanController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'nama_perusahaan' => 'required|max:255',
-            'logo' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'status' => 'required|in:aktif,non-aktif',
-        ]);
+{
+    $validated = $request->validate([
+        'nama_perusahaan' => 'required|max:255',
+        'logo' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
+        'url' => 'required|url',
+        'jenis' => 'required|max:255', // Tambahkan ini
+        'status' => 'required|in:aktif,non-aktif',
+    ]);
 
-        $logoPath = $request->file('logo')->store('logos', 'public');  // Menyimpan file logo
+    $logoPath = $request->file('logo')->store('logos', 'public');
 
-        Perusahaan::create([
-            'nama_perusahaan' => $request->nama_perusahaan,
-            'logo' => $logoPath,
-            'url' => $request->url,
-            'status' => $request->status,
-        ]);
+    Perusahaan::create([
+        'nama_perusahaan' => $request->nama_perusahaan,
+        'logo' => $logoPath,
+        'url' => $request->url,
+        'jenis' => $request->jenis, // Tambahkan ini
+        'status' => $request->status,
+    ]);
 
-        return redirect()->route('perusahaan.index')->with('success', 'Perusahaan berhasil ditambahkan');
-    }
+    return redirect()->route('perusahaan.index')->with('success', 'Perusahaan berhasil ditambahkan');
+}
+
 
     public function edit($id)
     {
@@ -46,10 +51,11 @@ class PerusahaanController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
+        $validator = Validator::make( $request->all(), [
             'nama_perusahaan' => 'required|max:255',
             'logo' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
             'url' => 'required|url',
+            'jenis' => 'required|max:255',
             'status' => 'required|in:aktif,non-aktif',
         ]);
 
@@ -69,6 +75,7 @@ class PerusahaanController extends Controller
             'nama_perusahaan' => $request->nama_perusahaan,
             'logo' => $logoPath,
             'url' => $request->url,
+            'jenis' => $request->jenis,
             'status' => $request->status,
         ]);
 
